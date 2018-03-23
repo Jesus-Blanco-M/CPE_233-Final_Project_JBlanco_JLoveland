@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1521241508">
+  <File Type="PWROPT-DCP" Name="RAT_wrapper_pwropt.dcp"/>
+  <File Type="ROUTE-PWR" Name="RAT_wrapper_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="RAT_wrapper.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="RAT_wrapper_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="RAT_wrapper_reports.tcl"/>
+  <File Type="BG-DRC" Name="RAT_wrapper.drc"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="RAT_wrapper_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="RAT_wrapper_timing_summary_init.rpt"/>
+  <File Type="OPT-HWDEF" Name="RAT_wrapper.hwdef"/>
+  <File Type="OPT-DCP" Name="RAT_wrapper_opt.dcp"/>
+  <File Type="OPT-DRC" Name="RAT_wrapper_drc_opted.rpt"/>
+  <File Type="OPT-TIMING" Name="RAT_wrapper_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="RAT_wrapper_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="RAT_wrapper_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="RAT_wrapper_placed.dcp"/>
+  <File Type="PLACE-IO" Name="RAT_wrapper_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="RAT_wrapper_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="RAT_wrapper_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="RAT_wrapper_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="RAT_wrapper_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="RAT_wrapper_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="RAT_wrapper_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="RAT_wrapper_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="RAT_wrapper_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="RAT_wrapper_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="RAT_wrapper_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="RAT_wrapper_drc_physopted.rpt"/>
+  <File Type="BG-BIT" Name="RAT_wrapper.bit"/>
+  <File Type="PHYSOPT-TIMING" Name="RAT_wrapper_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="RAT_wrapper_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="RAT_wrapper_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="RAT_wrapper_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="RAT_wrapper_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="RAT_wrapper_drc_routed.pb"/>
+  <File Type="BITSTR-MSK" Name="RAT_wrapper.msk"/>
+  <File Type="ROUTE-DRC-RPX" Name="RAT_wrapper_drc_routed.rpx"/>
+  <File Type="BG-BGN" Name="RAT_wrapper.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="RAT_wrapper_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-RBT" Name="RAT_wrapper.rbt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="RAT_wrapper_methodology_drc_routed.rpx"/>
+  <File Type="BG-BIN" Name="RAT_wrapper.bin"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="RAT_wrapper_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="RAT_wrapper_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="RAT_wrapper_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="RAT_wrapper_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="RAT_wrapper_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="RAT_wrapper_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="RAT_wrapper_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="RAT_wrapper_incremental_reuse_routed.rpt"/>
+  <File Type="RDI-RDI" Name="RAT_wrapper.vdi"/>
+  <File Type="ROUTE-CLK" Name="RAT_wrapper_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="RAT_wrapper_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="RAT_wrapper_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="RAT_wrapper_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="RAT_wrapper_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="RAT_wrapper_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="RAT_wrapper.nky"/>
+  <File Type="BITSTR-BMM" Name="RAT_wrapper_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="RAT_wrapper.mmi"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="RAT_wrapper.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="RAT_wrapper.sysdef"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/RAT-Microprocessor/ALU.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RAT-Microprocessor/ALU.vhd"/>
+        <Attr Name="ImportTime" Val="1518150972"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/RAT-Microprocessor/ControlUnit.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RAT-Microprocessor/ControlUnit.vhd"/>
+        <Attr Name="ImportTime" Val="1518150972"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/FlagReg.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../lab4/project_2_2-9-18/project_2_2-9-18.srcs/sources_1/new/FlagReg.vhd"/>
+        <Attr Name="ImportTime" Val="1518253282"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Flags.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../lab4/project_2_2-9-18/project_2_2-9-18.srcs/sources_1/new/Flags.vhd"/>
+        <Attr Name="ImportTime" Val="1518256528"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/LOCATION.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Assignment_6/Assignment_6.srcs/sources_1/new/LOCATION.vhd"/>
+        <Attr Name="ImportTime" Val="1521076441"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/RAT-Microprocessor/MCU.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RAT-Microprocessor/MCU.vhd"/>
+        <Attr Name="ImportTime" Val="1518150972"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/PC.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Assign2_PC/Assign2_PC.srcs/sources_1/new/PC.vhd"/>
+        <Attr Name="ImportTime" Val="1517025000"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/PC_Mux.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Assign2_PC/Assign2_PC.srcs/sources_1/new/PC_Mux.vhd"/>
+        <Attr Name="ImportTime" Val="1516924842"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/RAT-Microprocessor/RegisterFile.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RAT-Microprocessor/RegisterFile.vhd"/>
+        <Attr Name="ImportTime" Val="1518150972"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/SCR.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Assignment 5/CPE_233_HW_5A_StackPointer_2-23-18/HW_5A_StackPointer.srcs/sources_1/new/SCR.vhd"/>
+        <Attr Name="ImportTime" Val="1518663838"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/SP.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Assignment 5/CPE_233_HW_5A_StackPointer_2-23-18/HW_5A_StackPointer.srcs/sources_1/new/SP.vhd"/>
+        <Attr Name="ImportTime" Val="1518662708"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/VGAdrive.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Assignment_6/Assignment_6.srcs/sources_1/new/VGAdrive.vhd"/>
+        <Attr Name="ImportTime" Val="1520896376"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Assignment 1 Support Files/counter8b.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Assign2_PC/Assign2_PC.srcs/sources_1/imports/Assignment 1 Support Files/counter8b.vhd"/>
+        <Attr Name="ImportTime" Val="1516922356"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/counter_for_one_shot.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Assignment 5/CPE_233_HW_5A_StackPointer_2-23-18/CPE_233_HW_5B_Int_Test_int_2-23-18/CPE_233_HW_5B_Int_Test_int_2-23-18.srcs/sources_1/new/counter_for_one_shot.vhd"/>
+        <Attr Name="ImportTime" Val="1519440825"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/debounce_one_shot_FSM.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Assignment 5/CPE_233_HW_5A_StackPointer_2-23-18/CPE_233_HW_5B_Int_Test_int_2-23-18/CPE_233_HW_5B_Int_Test_int_2-23-18.srcs/sources_1/new/debounce_one_shot_FSM.vhd"/>
+        <Attr Name="ImportTime" Val="1519440825"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab4/prog_rom.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Assignment 5/CPE_233_HW_5A_StackPointer_2-23-18/prog_rom.vhd"/>
+        <Attr Name="ImportTime" Val="1519175860"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ramVGA.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Assignment_6/Assignment_6.srcs/sources_1/new/ramVGA.vhd"/>
+        <Attr Name="ImportTime" Val="1520896326"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/vgaDriverBuffer.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Assignment_6/Assignment_6.srcs/sources_1/new/vgaDriverBuffer.vhd"/>
+        <Attr Name="ImportTime" Val="1520896366"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/vga_clk_div.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Assignment_6/Assignment_6.srcs/sources_1/new/vga_clk_div.vhd"/>
+        <Attr Name="ImportTime" Val="1520896349"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/RAT_Wrapper_W17.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../lab4/RAT_lab4/RAT_lab4.srcs/sources_1/new/RAT_Wrapper_W17.vhd"/>
+        <Attr Name="ImportTime" Val="1518228976"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/univ_sseg_dec.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Assignment 5/CPE_233_HW_5A_StackPointer_2-23-18/CPE_233_HW_5B_Int_Test_int_2-23-18/CPE_233_HW_5B_Int_Test_int_2-23-18.srcs/sources_1/new/univ_sseg_dec.vhd"/>
+        <Attr Name="ImportTime" Val="1519441612"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/clk_div2_buf.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Assignment 5/CPE_233_HW_5A_StackPointer_2-23-18/Test_HW_5_Rat_Wrapper_2-21-18/Test_HW_5_Rat_Wrapper_2-21-18.srcs/sources_1/new/clk_div2_buf.vhd"/>
+        <Attr Name="ImportTime" Val="1519264024"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RatSimulator/prog_rom.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../jmurbano/Desktop/prog_rom.vhd"/>
+        <Attr Name="ImportTime" Val="1519788485"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="RAT_wrapper"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/Constaints.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../lab4/project_2_2-9-18/project_2_2-9-18.srcs/constrs_1/new/Constaints.xdc"/>
+        <Attr Name="ImportTime" Val="1518310078"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

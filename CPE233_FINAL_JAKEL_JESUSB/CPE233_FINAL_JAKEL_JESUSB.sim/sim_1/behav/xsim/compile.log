@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Jesus Blanco/Documents/Assignment_6/Assignment_6.srcs/sources_1/imports/lab4/prog_rom.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity prog_rom
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Jesus Blanco/Documents/Assignment_6/Assignment_6.srcs/sources_1/new/RAT_Wrapper_W17.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity RAT_wrapper

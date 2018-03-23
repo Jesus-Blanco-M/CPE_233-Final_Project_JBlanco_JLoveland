@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Mar 16 16:05:10 2018
+# Process ID: 30032
+# Current directory: C:/Users/Jesus Blanco/Documents/CPE233_FINAL_JAKEL_JESUSB/CPE233_FINAL_JAKEL_JESUSB.runs/synth_1
+# Command line: vivado.exe -log RAT_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RAT_wrapper.tcl
+# Log file: C:/Users/Jesus Blanco/Documents/CPE233_FINAL_JAKEL_JESUSB/CPE233_FINAL_JAKEL_JESUSB.runs/synth_1/RAT_wrapper.vds
+# Journal file: C:/Users/Jesus Blanco/Documents/CPE233_FINAL_JAKEL_JESUSB/CPE233_FINAL_JAKEL_JESUSB.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source RAT_wrapper.tcl -notrace
