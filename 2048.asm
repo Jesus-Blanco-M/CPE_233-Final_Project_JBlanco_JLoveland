@@ -25,10 +25,10 @@
 .DSEG
 .ORG 0x000
 .DB 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
-.DB	0xFF, 0x00, 0x00, 0x00, 0x00, 0xFF
-.DB	0xFF, 0x00, 0x01, 0x01, 0x00, 0xFF
-.DB	0xFF, 0x00, 0x00, 0x00, 0x00, 0xFF
-.DB	0xFF, 0x00, 0x00, 0x00, 0x00, 0xFF
+.DB 0xFF, 0x00, 0x00, 0x00, 0x00, 0xFF
+.DB 0xFF, 0x00, 0x01, 0x01, 0x00, 0xFF
+.DB 0xFF, 0x00, 0x00, 0x00, 0x00, 0xFF
+.DB 0xFF, 0x00, 0x00, 0x00, 0x00, 0xFF
 .DB 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 ;-----------------------------------------------------------------------------------------
 ;-----------------------------------------------------------------------------------------
@@ -227,7 +227,7 @@ DRAW_ROW:
 		 ADD r29, 0x01			; Increments the X-Coordinate counter.
 		 CMP r29, 0x08			; Checks to see if the block's maximum X-Coordinate is reached.
 	 	 BREQ BlockDriver
-	     BRN DRAW_ROW
+	     	 BRN DRAW_ROW
 
 DRAW_COL:
 		 ADD r30, 0x01			; Increments the Y-Coordinate counter.
@@ -255,22 +255,22 @@ BLOCK_DONE:
 ;-----------------------------------------------------------------------------------------
 
 draw_dot:
-         MOV r24, r27         			; Copies Y-Coordinate
-         MOV r25, r28         			; Copies X-Coordinate
-         AND r25, 0x7F      			; Makes sure the top 1 bits are cleared.
-         AND r24, 0x3F      			; Makes sure the top 2 bits are cleared.
-         LSR r24            			; Place bottom bit of r4 into r5. 
-         BRCS dd_add80 
+         	MOV r24, r27         		; Copies Y-Coordinate
+        	MOV r25, r28         		; Copies X-Coordinate
+         	AND r25, 0x7F      		; Makes sure the top 1 bits are cleared.
+         	AND r24, 0x3F      		; Makes sure the top 2 bits are cleared.
+         	LSR r24            		; Place bottom bit of r4 into r5. 
+         	BRCS dd_add80 
 		 
 dd_out:
-         OUT r25, VGA_LADD   			; Write bottom 8 address bits to register.
-         OUT r24, VGA_HADD   			; Write top 5 address bits to register.
-         OUT r26, VGA_COLOR  			; Write color data to frame buffer.
-         RET            
+         	OUT r25, VGA_LADD   		; Write bottom 8 address bits to register.
+         	OUT r24, VGA_HADD   		; Write top 5 address bits to register.
+         	OUT r26, VGA_COLOR  		; Write color data to frame buffer.
+         	RET            
 		 
 dd_add80:
-         OR  r25, 0x80       			; Set bit if needed.
-         BRN   dd_out
+         	OR  r25, 0x80       		; Set bit if needed.
+         	BRN dd_out
 		 
 ;-----------------------------------------------------------------------------------------
 ;- END OF SUBROUTINES
@@ -326,8 +326,8 @@ main:
 		 ADD r1,  r3			; Get next address.
 		 
 newSpot:
-		 LD	 r10, (r0)		; Value at starting spot.
-		 LD	 r11, (r1)		; Value in next spot.
+		 LD  r10, (r0)			; Value at starting spot.
+		 LD  r11, (r1)			; Value in next spot.
 		 CMP r11, 0xFF			; If it is an edge
 		 BREQ incrRow			; go to the next row.
 		 CMP r11, 0x00			; Else if left is empty
@@ -356,7 +356,8 @@ combine:
 notwin:	
 		 BRN incrCol
 
-incrCol:ST  r10, (r0)
+incrCol:
+		ST  r10, (r0)
 		ST  r11, (r1)
 		ADD r0,  r3			; Increment column of current.
 		ADD r1,  r3			; Increment column of next.
@@ -365,11 +366,11 @@ incrCol:ST  r10, (r0)
 incrRow:
 		 CMP r6, 0x01
 		 BREQ resetCol
-		 ST	 r10, (R0)
-		 ST	 r11, (R1)
+		 ST  r10, (R0)
+		 ST  r11, (R1)
 		 ADD r1,  r5			; Checking next row.
 		 ADD r1,  r4			; Reset columns.
-		 LD	 r11, (r1)
+		 LD  r11, (r1)
 		 CMP r11, 0xFF			; If next row is an edge
 		 BREQ done			; completed entire grid
 		 ADD r0,  r4			; Else reset columns
@@ -377,8 +378,8 @@ incrRow:
 		 BRN newSpot			; Start again at new row.
 
 resetCol:
-		 ST	 r10, (R0)
-		 ST	 r11, (R1)
+		 ST  r10, (R0)
+		 ST  r11, (R1)
 		 ADD r1,  r4			; Reset columns of next.
 		 ADD r0,  r4			; Reset columns of current.
 		 MOV r6,  0x00
