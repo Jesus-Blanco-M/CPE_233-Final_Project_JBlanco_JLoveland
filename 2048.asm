@@ -12,10 +12,10 @@
 ;-----------------------------------------------------------------------------------------
 ;- Constants
 ;-----------------------------------------------------------------------------------------
-.EQU VGA_HADD  = 0x90			; port for the VGA_HADD --------- OUTPUT
-.EQU VGA_LADD  = 0x91 			; port for the VGA_LADD --------- OUTPUT
-.EQU VGA_COLOR = 0x92 			; port for the VGA_COLOR -------- OUTPUT
-.EQU BUTTONS = 0x9A 			; port for the button input ----- INPUT
+.EQU VGA_HADD  = 0x90				; port for the VGA_HADD --------- OUTPUT
+.EQU VGA_LADD  = 0x91 				; port for the VGA_LADD --------- OUTPUT
+.EQU VGA_COLOR = 0x92 				; port for the VGA_COLOR -------- OUTPUT
+.EQU BUTTONS = 0x9A 				; port for the button input ----- INPUT
 .EQU RAND = 0x8A 				; port for random location ------ INPUT
 ;-----------------------------------------------------------------------------------------
 
@@ -38,7 +38,7 @@
 MOV r26, 0x00					; Sets drawing color to black.
 
 Draw_Background:
-		 CALL BACKGROUND_M  	; Draws a black background.
+		 CALL BACKGROUND_M  		; Draws a black background.
 		 
 MOV r26, 0xFF
 
@@ -47,7 +47,7 @@ Draw_Grid:
 		 MOV r27, 0x0A 			; Initial Y-Coordinate of the upper-left block.
 		 MOV r16, 0x07
 		 Call Grid_Driver		; Draws grid.
-		 SEI					; Enables interrupts.
+		 SEI				; Enables interrupts.
 		 BRN Draw_Grid			
 
 ;-----------------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ ColorMain:
 		 LD r15, (r16)			; Loads the Block from the Memory.
 		 ADD r16, 0x01			; Increments the Memory Address.
 		 CMP r15, 0x00			; Compares the block value to determine the color.
-		 BREQ WHITE				; Realizes its an Empty Block.
+		 BREQ WHITE			; Realizes its an Empty Block.
 		 CMP r15, 0x01			; Compares the block value to determine the color.
 		 BREQ BLOCK2			; Realizes its a block with Value 2.
 		 CMP r15, 0x02			; Compares the block value to determine the color.
@@ -155,7 +155,7 @@ BACKGROUND_M:
 
 BACKGROUND_N:
 		 CMP r22, 0x60			; Checks to see if the maximum Y-Coordinate is reached.
-		 BREQ BACKGROUND_DONE	;
+		 BREQ BACKGROUND_DONE
 		 ADD r22, 0x01			; Increments the Y-Coordinate counter.
 		 MOV r28, 0x00			; Resets the X-Coordinate.
 		 MOV r23, 0x00			; Resets the X-Coordinate counter.
@@ -255,21 +255,21 @@ BLOCK_DONE:
 ;-----------------------------------------------------------------------------------------
 
 draw_dot:
-         MOV r24, r27         	; Copies Y-Coordinate
-         MOV r25, r28         	; Copies X-Coordinate
-         AND r25, 0x7F      	; Makes sure the top 1 bits are cleared.
-         AND r24, 0x3F      	; Makes sure the top 2 bits are cleared.
-         LSR r24            	; Place bottom bit of r4 into r5. 
+         MOV r24, r27         			; Copies Y-Coordinate
+         MOV r25, r28         			; Copies X-Coordinate
+         AND r25, 0x7F      			; Makes sure the top 1 bits are cleared.
+         AND r24, 0x3F      			; Makes sure the top 2 bits are cleared.
+         LSR r24            			; Place bottom bit of r4 into r5. 
          BRCS dd_add80 
 		 
 dd_out:
-         OUT r25, VGA_LADD   	; Write bottom 8 address bits to register.
-         OUT r24, VGA_HADD   	; Write top 5 address bits to register.
-         OUT r26, VGA_COLOR  	; Write color data to frame buffer.
+         OUT r25, VGA_LADD   			; Write bottom 8 address bits to register.
+         OUT r24, VGA_HADD   			; Write top 5 address bits to register.
+         OUT r26, VGA_COLOR  			; Write color data to frame buffer.
          RET            
 		 
 dd_add80:
-         OR  r25, 0x80       	; Set bit if needed.
+         OR  r25, 0x80       			; Set bit if needed.
          BRN   dd_out
 		 
 ;-----------------------------------------------------------------------------------------
@@ -283,13 +283,13 @@ dd_add80:
 ISR:
 		 IN  r7,  BUTTONS		; Take in the buttons.
 		 CMP r7,  0x01			; If right pressed
-	 	 BREQ right				; setup right values.
+	 	 BREQ right			; setup right values.
 		 CMP r7,  0x02			; If up pressed
-		 BREQ up				; setup up values.
+		 BREQ up			; setup up values.
 		 CMP r7,  0x04			; If down pressed
-		 BREQ down				; setup down values.
+		 BREQ down			; setup down values.
 		 CMP r7,  0x08			; If left pressed
-		 BREQ left				; setup left values.
+		 BREQ left			; setup left values.
 		 BRN ISR
 
 right:	
@@ -301,7 +301,7 @@ right:
 
 left:	
 		 MOV r2,  0x07			; Starting address (top left).
-		 MOV r3,  0x01			; Column increment	(right).
+		 MOV r3,  0x01			; Column increment (right).
 		 MOV r4,  0xFD			; Column reset (-3).
 		 MOV r5,  0x06			; Row increment (down).
 		 BRN main
@@ -326,14 +326,14 @@ main:
 		 ADD r1,  r3			; Get next address.
 		 
 newSpot:
-		 LD	 r10, (r0)			; Value at starting spot.
-		 LD	 r11, (r1)			; Value in next spot.
+		 LD	 r10, (r0)		; Value at starting spot.
+		 LD	 r11, (r1)		; Value in next spot.
 		 CMP r11, 0xFF			; If it is an edge
 		 BREQ incrRow			; go to the next row.
 		 CMP r11, 0x00			; Else if left is empty
 		 BREQ incrCol			; go increment the column.
 		 CMP r10, 0x00			; Else if the current is empty
-		 BREQ swap				; swap current and next.
+		 BREQ swap			; swap current and next.
 		 CMP r10, r11			; Else if the left is the same
 		 BREQ combine			; merge the two.
 		 BRN incrCol			; Else increment the column.
@@ -358,9 +358,9 @@ notwin:
 
 incrCol:ST  r10, (r0)
 		ST  r11, (r1)
-		ADD r0,  r3				; Increment column of current.
-		ADD r1,  r3				; Increment column of next.
-		BRN newSpot				; Move on to new spot.
+		ADD r0,  r3			; Increment column of current.
+		ADD r1,  r3			; Increment column of next.
+		BRN newSpot			; Move on to new spot.
 
 incrRow:
 		 CMP r6, 0x01
@@ -371,7 +371,7 @@ incrRow:
 		 ADD r1,  r4			; Reset columns.
 		 LD	 r11, (r1)
 		 CMP r11, 0xFF			; If next row is an edge
-		 BREQ done				; completed entire grid
+		 BREQ done			; completed entire grid
 		 ADD r0,  r4			; Else reset columns
 		 ADD r0,  r5			; and increment rows
 		 BRN newSpot			; Start again at new row.
@@ -395,5 +395,5 @@ done:
 
 ;-----------------------------------------------------------------------------------------
 ;-----------------------------------------------------------------------------------------
-.ORG 0x3FF						; Interrupt Vector.
+.ORG 0x3FF					; Interrupt Vector.
 BRN ISR							
